@@ -1,0 +1,72 @@
+{#  extendendo elementos a partir de blocos  #}
+{% extends "layout.html" %}
+
+
+{# Criar uma variavel #}
+{% set pageId = "page-search-results" %}
+
+
+{# Estilos CSS #}
+{% block styles %}
+    <link rel="stylesheet" href="./css/search-results.css">
+{% endblock styles %}
+  
+    
+{# Informação da pagina #}
+{% block title %}
+    <title>Ecoleta | Resultado da pesquisa</title>
+{% endblock title %}
+
+
+{# Conteudo da pagina #}
+{% block content %}
+    {# reutilizando partes da página em diferentes arquivos || HEADER #}
+    {% include "partials/page-header.html" %}
+
+    <main>
+
+        {% if total > 0 %}
+            <h4>
+                <strong>{{total}} pontos</strong> encontrados
+            </h4>
+
+            <div class="cards">
+
+                {# Estrutura de repetição com Nunjucks #}
+                {% for place in places %}
+
+                    {# Card #}
+                    <div class="card">
+                        <img src="{{ place.image }}" alt="{{ place.name }}">
+
+                        <h1>{{ place.name }}</h1>
+                        <h3>{{ place.items }}</h3>
+
+                        <p>
+                            {{ place.city }}, {{ place.state }}
+                            <br>
+                            {{ place.address }}
+                            <br>
+                            {{ place.address2 }}
+                        </p>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+        {%else%}
+
+        <h4>
+            <strong>Nenhum</strong> 
+            local encontrado
+        </h4>
+
+        {% endif %}
+        
+    </main>
+
+{% endblock content %}
+
+
+
+

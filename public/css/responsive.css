@@ -1,0 +1,105 @@
+/* responsividade */
+@media (min-width: 1700px) {
+    #page-home {
+        background-position-x: 40vw;
+    }
+}
+
+@media (max-width: 900px) {
+    /* de 0 ate 900 faça: */
+    #page-home {
+        background-position-x: 70vw;
+    }
+
+    #page-home .content {
+        align-items: center;
+        text-align: center;
+    }
+
+    #page-home header a {
+        /* jogar link do header para o rodapé da tela */
+        position: absolute;
+        bottom: 48px;
+
+        /* centralizar link */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #page-home main {
+        align-items: center;
+    }
+
+    /* search-results || Grid || Img */
+    #page-search-results .cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #page-search-results .cards img {
+        height: 250px;
+    }
+
+    /* Create-point || Form Inputs */
+    #page-create-point .field-group {
+        flex-direction: column;
+    }
+
+    #page-create-point .field-group .field + .field {
+        margin-left: 0;
+    }
+
+    /* Create-point || Form Grid Itens */
+    form legend {
+        flex-direction: column;
+    }
+
+    .items-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 899px) {
+    /* Create-point || Form Grid Itens */
+    .items-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Search-results cards */
+    #page-search-results .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-height: 790px) {
+    #page-home header a {
+        /* jogar link do header para o rodapé da tela */
+        bottom: 10px;
+    }
+}
+
+@media (max-height: 760px) {
+    #page-home {
+        background-position-y: 200px;
+    }
+}
+
+@media (max-width: 550px) {
+    /* Search-results cards */
+    #page-search-results .cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Create-point || Form Grid Itens */
+    .items-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Create-point || Header */
+    #page-create-point header {
+        flex-direction: column;
+    }
+
+    #page-create-point a {
+        margin-top: 30px;
+    }
+}

@@ -1,0 +1,54 @@
+{#  extendendo elementos a partir de blocos  #}
+{% extends "layout.html" %}
+
+
+{# Criar uma variavel #}
+{% set pageId = "page-home" %}
+
+
+{#  Estilos CSS  #}
+{% block styles %} 
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/modal.css">
+{% endblock styles %}
+
+
+{# Conteudo da pagina #}
+{# PAGE-HOME #}
+{% block content %}
+    <section class="content">
+        <header>
+            <img src="./assets/logo.svg" alt="logo Ecoleta">
+            
+            <a href="create-point">
+                <span></span>
+                Cadastre um ponto de coleta
+            </a>    
+        </header>
+
+        <main>
+            <h1>Seu marketplace de coleta de resíduos.</h1>
+                
+            <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</p>
+                    
+            <a href="#">
+                <span></span>
+                <strong>Pesquisar pontos de coleta</strong>
+            </a>        
+        </main>
+    </section>
+{% endblock content %}
+
+
+{#  Modal || Ponstos de coleta #}
+{% block modal %}
+    {% include "partials/modal.html" %}
+{% endblock modal %}
+
+
+{#  Scripts  #}
+{% block scripts %}
+    <script src="./scripts/index.js"></script>
+{% endblock scripts %}
+
+
